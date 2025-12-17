@@ -13,6 +13,9 @@
     place-items: center;
     text-align: center;
     z-index: 2;
+    top: 20%;    
+    left: 50%;
+    color: "#ffffff00";
 }
 .shadow{
   background-color: rgba(0, 0, 0, 0.2);
