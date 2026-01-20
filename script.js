@@ -1,5 +1,34 @@
 import gsap from "gsap";
 
+const enterBtn = document.querySelector('.ball');
+const splash = document.querySelector('.container');
+
+enterBtn.addEventListener('click', (e) => {
+    e.preventDefault(); // Stop immediate jump to main.html
+    const destination = "main.html";
+
+    // Create a GSAP Timeline for the transition
+    const tl = gsap.timeline({
+        onComplete: () => {
+            window.location.href = destination; // Redirect when done
+        }
+    });
+
+    tl.to(enterBtn, {
+        scale: 1.5,          // Grow the button
+        duration: 0.4,
+        ease: "power2.out"
+    })
+     .to(splash, {
+         opacity: 0,          // Fade out the entire splash section
+        duration: 0.6,
+        ease: "power1.inOut"
+    }, "-=0.2");             // Start fade slightly before grow ends
+});
+
+
+
+
 
 const element = document.querySelector(".ball");
 const b1 = "linear-gradient(217deg, rgba(158, 66, 66, 0.9), rgba(255,0,0,0) 70.71%),  linear-gradient(127deg, rgba(82, 163, 82, 0.61), rgba(0,255,0,0) 70.71%), linear-gradient(336deg, rgba(105, 105, 153, 0.9), rgba(69, 69, 211, 0.34) 70.71%)";
