@@ -10,6 +10,12 @@
             }
         </script>
         <script>
+            import { createClient } from '@supabase/supabase-js'
+            const supabaseUrl = import.meta.env.SUPA_URL
+            const supabaseAnonKey = import.meta.env.SUPA_ANON_KEY
+            export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+        </script>
+        <script>
             import gsap from "gsap";
             window.addEventListener('DOMContentLoaded', () => {
                 gsap.to("body", { opacity: 1, duration: 1 });
