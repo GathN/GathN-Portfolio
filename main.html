@@ -9,12 +9,9 @@
                 }
             }
         </script>
-        <script>
-            import { createClient } from '@supabase/supabase-js'
-            const supabaseUrl = import.meta.env.SUPA_URL
-            const supabaseAnonKey = import.meta.env.SUPA_ANON_KEY
-            export const supabase = createClient(supabaseUrl, supabaseAnonKey)
-        </script>
+        <script type="module" src="./supabase/supabaseClient.js"></script>
+        <script type="module" src="./supabase/script.js"></script>
+        <script type="module" src="./supabase/interactionlogic.js"></script>
         <script>
             import gsap from "gsap";
             window.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +22,13 @@
     <body>
         <header>
             <h1>My List of Projects</h1>
+            <div>Welcome! <b id="username">Anonymous!</b>
+                <button onclick="changeName()" id="change-username-btn" class="change-username-btn">
+                    Edit My Name
+                </button>
+            </div>
         </header>
         <div>nigiga</div>
+        <section id="portfolio-grid"></section>
     </body>
 </html>
