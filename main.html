@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Is this actually important?</title>
+
+        <script>
+            import gsap from "gsap";
+            window.addEventListener('DOMContentLoaded', () => {
+                gsap.to("body", { opacity: 1, duration: 1 });
+            });
+    </script>
+        <script type="importmap">
+            {
+                "imports": {
+                "gsap": "./node_modules/gsap/index.js"
+                }
+            }
+        </script>
+      <script type="module" crossorigin src="/GathN-Portfolio/assets/main-B1bniKOH.js"></script>
+      <link rel="modulepreload" crossorigin href="/GathN-Portfolio/assets/modulepreload-polyfill-B5Qt9EMX.js">
+      <link rel="stylesheet" crossorigin href="/GathN-Portfolio/assets/main-BCj2xWQ_.css">
+    </head>
+    <body>
+        <header>
+            <h1>My List of Projects</h1>
+            <div>Welcome! <b id="username">Anonymous!</b>
+                <button onclick="changeName()" id="change-username-btn" class="change-username-btn">
+                    Edit My Name
+                </button>
+            </div>
+        </header>
+        <div>nigiga</div>
+        <section id="portfolio-grid"></section>
+    </body>
+</html>
