@@ -51,45 +51,48 @@ ${v}`}class C extends Error{constructor({message:e,code:t,cause:s,name:n}){var i
             </div>
         `).join(""):'<p class="no-comments">Be the first to comment!</p>',l=`
             <div class="project-card">
-                <img src="${i}" alt="${t.title}">
-                <div id="title-and-like">
-                    <div class="title-and-date">
-                        <span id="project-title">${t.title}</span>
-                        <br />
-                        <span id="display-date">${n}</span>
-                    </div>
-                    <div class="interactions">
-                    <button class="like-btn" data-id="${t.id}">
-                        <svg viewBox="0 0 32 32" style="overflow: visible;" width="3vw" height="3vw" preserveAspectRatio="xMidYMid meet" class="heart">
-                                <path fill="#ff4d4d" d="M16 28.5L14.1 26.8C7.3 20.6 2.8 16.5 2.8 11.5 2.8 7.4 6 4.2 10.1 4.2 12.4 4.2 14.6 5.3 16 7.1 17.4 5.3 19.6 4.2 21.9 4.2 26 4.2 29.2 7.4 29.2 11.5 29.2 16.5 24.7 20.6 17.9 26.8L16 28.5Z" />
-                                
-                                <text 
-                                x="50%" 
-                                y="60%" 
-                                fill="white" 
-                                font-size="1em" 
-                                font-family="Arial" 
-                                text-anchor="middle" 
-                                class="like-count" 
-                                position="absolute">${t.likes_count||0}</text>
+                    <img src="${i}" alt="${t.title}">
+                <div class="project-content">
+                    <div id="title-and-like">
+                        <div class="title-and-date">
+                            <span id="project-title">${t.title}</span>
+                            <br />
+                            <span id="display-date">${n}</span>
+                        </div>
+                        <div class="interactions">
+                            <button class="like-btn" data-id="${t.id}">
+                                <svg viewBox="0 0 32 32" style="overflow: visible;" width="3vw" height="3vw" preserveAspectRatio="xMidYMid meet" class="heart">
+                                        <path fill="#ff4d4d" d="M16 28.5L14.1 26.8C7.3 20.6 2.8 16.5 2.8 11.5 2.8 7.4 6 4.2 10.1 4.2 12.4 4.2 14.6 5.3 16 7.1 17.4 5.3 19.6 4.2 21.9 4.2 26 4.2 29.2 7.4 29.2 11.5 29.2 16.5 24.7 20.6 17.9 26.8L16 28.5Z" />
+                                        
+                                        <text 
+                                        x="50%" 
+                                        y="60%" 
+                                        fill="white" 
+                                        font-size="1em" 
+                                        font-family="Arial" 
+                                        text-anchor="middle" 
+                                        class="like-count" 
+                                        position="absolute">${t.likes_count||0}</text>
 
-                        </svg>
-                        </button>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <p class="project-text-box">${t.slug}</p>
-
-                <a href="project-detail.html?id=${t.id}">View Details</a>
-                
-                <div class="comment-section">
-                    <div class="comment-list" id="comments-${t.id}">
-                        ${o||'<p class="no-comments">No comments yet.</p>'}
-                    </div>
+                        <div>
+                            <p class="project-text-box">
+                                ${t.slug}
+                            </p>
+                        </div>
+                    <div class="comment-section">
+                        <div class="comment-list" id="comments-${t.id}">
+                            ${o||'<p class="no-comments">No comments yet.</p>'}
+                        </div>
+                    </div>  
                     <div class="comment-input-wrap">
                         <input type="text" placeholder="Say something about this project.." id="input-${t.id}">
                         <button class="send-comment" data-id="${t.id}">Send</button>
-                </div>            
-            
+                    </div>
+                </div>
             </div>
         `;e.innerHTML+=l}))}document.addEventListener("DOMContentLoaded",Tn);const An=document.getElementById("portfolio-grid"),Wt={get(r){const t=`; ${document.cookie}`.split(`; ${r}=`);return t.length===2?t.pop().split(";").shift():null},set(r,e,t=365){const s=new Date;s.setTime(s.getTime()+t*24*60*60*1e3),document.cookie=`${r}=${e};expires=${s.toUTCString()}
         ;path=/;SameSite=Strict`}};let H=Wt.get("visitor_id");H||(H=crypto.randomUUID(),Wt.set("visitor_id",H));console.log("Your Anonymous ID:",H);function Kt(){const r=localStorage.getItem("portfolio_username")||`Anon_${H.slice(0,4)}`;document.getElementById("username").innerText=r}window.changeName=()=>{const r=prompt("Change your display name:",document.getElementById("username").innerText);r?.trim()&&(localStorage.setItem("portfolio_username",r.trim()),Kt())};Kt();async function Rn(r){const{data:e,error:t}=await ve.from("comments").select("username, content, created_at").eq("project_id",r).order("created_at",{ascending:!1}).limit(3);if(!t){const s=document.getElementById(`comments-${r}`);s&&(s.innerHTML=e.length>0?e.map(n=>`
