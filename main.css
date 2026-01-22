@@ -1,11 +1,43 @@
 header {
     display: flex;
+    flex-direction: row;
+    gap: 12px;
     align-items: center;
-    justify-content: center;
-    background-color: aquamarine;
+    justify-content: space-around;
+    /* background-color: aquamarine; */
+    box-shadow: 0px 10px 5px rgb(148, 111, 182);
+    padding: 20px;
 }
+
+.change-username-btn{
+    background: #EEAECA;
+    padding: 5px;
+    margin-top:10px;
+    border: hidden;
+    border-radius: 8px;
+    transition: 0.2s ease;
+
+
+    pointer-events: auto;
+    cursor: pointer;
+    
+
+}
+
+.change-username-btn:hover{
+    background:#d66666;
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+    transform: scale(1.1);
+}
+
+
 body {
-    background-color: blueviolet;
+    /* background-color: #845ec2; */background: #EEAECA;
+    background: linear-gradient(227deg, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 51%, rgba(132, 94, 194, 1) 99%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 #portfolio-grid {
@@ -17,36 +49,66 @@ body {
 }
 
 .project-card {
+    grid-template-columns: auto;
     border: 1px solid #ccc;
+    background-color:rgb(253, 248, 241);
     border-radius: 8px;
     overflow: hidden;
+    padding: 10px;
     display: flex;
     flex-direction: column;
+    gap: 0;
 }
+
+#project-title{
+    
+    font-weight: bold;
+    font-size: 1.17em;
+}
+
+#display-date {
+    padding:0%;
+}
+
+.title-and-date {
+}
+
+#title-and-like {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    gap: 12px;   
+}
+
 
 .project-card img {
     width: 100%;
     height: 200px;
     object-fit: cover; 
+    border-radius: 8px
 }
 
 
-
-
-.interaction-bar {
-    margin: 10px 0;
-    border-top: 1px solid #333;
-    padding-top: 10px;
+.heart{
+  width: 100%;       /* It will fill its parent container */
+  max-width: 150px;  /* It won't grow larger than this */
+  height: auto;      /* Maintains the aspect ratio defined in viewBox */
+  display: block;
+  pointer-events: none;
 }
 
 .like-btn {
     background: none;
-    border: 1px solid #444;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 20px;
+    border: 2px hidden #8d1959;
+    aspect-ratio: 1;
+    border-radius: 10%;
     cursor: pointer;
     transition: 0.2s;
+    flex-shrink: 0;
+    min-width: 50px;
+    pointer-events: auto;
 }
 
 .like-btn:hover {
@@ -54,17 +116,58 @@ body {
     border-color: #ff4b2b;
 }
 
+
+.project-text-box {
+    background-color: #f0e5d1;
+    padding: 20px;
+    border-radius: 10px;
+    font-style: italic;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+}
+
+.comment-list {
+    padding: 5px 0;
+    color:rgba(136, 67, 67, 0.575);
+    min-height:50px;
+}
+
 .comment-input-wrap {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     display: flex;
     gap: 5px;
     margin-top: 10px;
 }
 
 .comment-input-wrap input {
+    
     flex: 1;
-    background: #222;
-    border: 1px solid #444;
-    color: white;
+    font-size: 1em;
+    background: #f0e5d1;
+    border: 2px solid #5c0d27;
+    color: #5c0d27;
     padding: 5px;
     border-radius: 4px;
+}
+
+.send-comment {
+    background:#5c0d27;
+    font-size: 1em;
+    border: 2px solid #5c0d27;
+    border-radius: 10%;
+    color:#f0e5d1;
+    pointer-events: auto;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.2s;
+}
+.send-comment:hover{
+    background:#964343;
+    transform: scale(1.1); 
+    
 }

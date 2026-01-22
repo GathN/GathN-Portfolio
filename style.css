@@ -30,7 +30,7 @@
     z-index: 2;
     color: "#ffffff00";
     pointer-events: auto;
-
+    cursor: pointer;
 }
 
 .shadow{

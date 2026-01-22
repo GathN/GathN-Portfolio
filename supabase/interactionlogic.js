@@ -77,9 +77,9 @@ grid.addEventListener('click', async (e) => {
 
     if (e.target.classList.contains('like-btn')) {
         const projectId = likeBtn.getAttribute('data-id');
-        const countSpan = likeBtn.querySelector('.like-count');
-        let currentCount = parseInt(countSpan.innerText) || 0;
-        countSpan.innerText = currentCount + 1;
+        const countSpan = likeBtn.querySelector('.like-btn text');
+        let currentCount = parseInt(countSpan.textContent) || 0;
+        countSpan.textContent = currentCount + 1;
 
         const { error } = await supabase
             .from('likes')
@@ -91,7 +91,7 @@ grid.addEventListener('click', async (e) => {
         if (error) {
             
             console.error("Like failed:", error);
-            countSpan.innerText = currentCount; 
+            countSpan.textContent = currentCount; 
             if (error.code === '23505' ) {
                 alert("You've already liked this project");
             }else{
@@ -110,11 +110,9 @@ grid.addEventListener('click', async (e) => {
         const input = document.getElementById(`input-${projectId}`);
         const content = input.value.trim();
         let username = localStorage.getItem('portfolio_username');
-        if (!username) {
-        username = prompt("Please enter a username for your comment:");
         if (!username || username.trim() === "") username = "Anon_" + visitorId.slice(0,4);
         localStorage.setItem('portfolio_username', username);
-    }
+    
 
         if (content) {
             const { error } = await supabase

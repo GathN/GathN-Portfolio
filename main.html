@@ -1,6 +1,7 @@
 <html>
     <head>
         <title>Is this actually important?</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css">
         <script type="importmap">
             {
@@ -22,13 +23,14 @@
     <body>
         <header>
             <h1>My List of Projects</h1>
-            <div>Welcome! <b id="username">Anonymous!</b>
+            <div style="display:flex;flex-direction: column;">
+                <span>Welcome! <b id="username">Anonymous!</b></span>
                 <button onclick="changeName()" id="change-username-btn" class="change-username-btn">
                     Edit My Name
                 </button>
             </div>
         </header>
-        <div>nigiga</div>
+        <div>random text</div>
         <section id="portfolio-grid"></section>
     </body>
 </html>
