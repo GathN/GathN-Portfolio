@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Is this actually important?</title>
+        <title>yipee</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="main.css">
         <script type="importmap">
@@ -11,14 +11,8 @@
             }
         </script>
         <script type="module" src="./supabase/supabaseClient.js"></script>
-        <script type="module" src="./supabase/script.js"></script>
+        <script type="module" src="./supabase/project-script.js"></script>
         <script type="module" src="./supabase/interactionlogic.js"></script>
-        <script>
-            import gsap from "gsap";
-            window.addEventListener('DOMContentLoaded', () => {
-                gsap.to("body", { opacity: 1, duration: 1 });
-            });
-    </script>
     </head>
     <body>
         <header>
@@ -30,9 +24,14 @@
                 </button>
             </div>
         </header>
-        <div>random text</div>
         <section id="portfolio-grid">
-            <section id="projects-grid"></section>
+            <section id="project-flexbox">
+                <section id="project-container"></section>
+                <button id="back-to-main">
+                    back
+                <a href="main.html" class="project-link"></a>
+            </button>
+            </section>
         </section>
     </body>
 </html>
