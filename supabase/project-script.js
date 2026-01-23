@@ -30,7 +30,7 @@ import { display_Date, image_Url, safe_Comments } from './utils.js'
     function renderProjects(project){
 
     
-
+    document.title = project.title;
     const container = document.getElementById('project-container');
 
     let finalImageUrl = image_Url(project.image_url);
