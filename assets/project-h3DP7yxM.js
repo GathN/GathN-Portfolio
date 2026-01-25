@@ -1,4 +1,4 @@
-import"./modulepreload-polyfill-B5Qt9EMX.js";import{s as o,i as d,d as c,a as l}from"./interactionlogic-DOi-fYds.js";async function m(){const a=new URLSearchParams(window.location.search).get("id"),{data:e,error:i}=await o.from("projects").select(`
+import"./modulepreload-polyfill-B5Qt9EMX.js";import{s as o,i as d,d as c,a as l}from"./interactionlogic-jbzwv6t7.js";async function m(){const a=new URLSearchParams(window.location.search).get("id"),{data:e,error:i}=await o.from("projects").select(`
                 *, 
                 likes:likes(count),
                 comments(username, content, created_at)
